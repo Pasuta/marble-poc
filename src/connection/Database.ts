@@ -6,9 +6,8 @@ import { config } from '../config';
 export namespace Database {
   const { urlMain, urlTest } = config.db;
 
-  const onOpen = (db) => {
-    console.log();
-    console.info(chalk.green('[database] connected'));
+  const onOpen = () => {
+    console.info(chalk.green(`[database] connected to ${urlMain}`));
   };
 
   const onError = (error: mongoose.Error) => {
